@@ -18,6 +18,7 @@ data class Expense(
 
     /**
      * Compares expenses based on date and timestamp.
+Сравнивает расходы на основе даты и временной метки.
      */
     override fun compareTo(other: Expense): Int {
         return if (date == other.date) {
