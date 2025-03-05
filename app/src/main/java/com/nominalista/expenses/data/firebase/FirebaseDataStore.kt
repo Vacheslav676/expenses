@@ -21,7 +21,7 @@ class FirebaseDataStore(
     private val firestore: FirebaseFirestore
 ) : DataStore {
 
-    // Expenses
+    // Expenses расходы
 
     override fun observeExpenses(): Observable<List<Expense>> {
         val expenseCollectionReference = getExpenseCollectionReference()
@@ -117,6 +117,7 @@ class FirebaseDataStore(
 
     /**
      * Firebase does not support deleting collection. Get all expenses and delete one by one.
+Firebase не поддерживает удаление коллекции. Получите все расходы и удаляйте их по очереди.
      */
     override fun deleteAllExpenses(): Completable {
         return getExpenses()
